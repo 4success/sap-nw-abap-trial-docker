@@ -21,12 +21,10 @@ RUN chmod +x install.sh install.exp
 # Important ports to be exposed (TCP):
 # HTTP
 EXPOSE 8000
-EXPOSE 50000
 EXPOSE 8101
 
 # HTTPS
 EXPOSE 44300
-EXPOSE 50001
 
 # RFC
 EXPOSE 3300

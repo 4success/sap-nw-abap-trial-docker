@@ -71,7 +71,7 @@ Esse Dockerfile foi baseado:
 
     Depois de executado, você pode verificar se deu certo com o comando `sysctl vm.max_map_count`. Para sair, aperte `crtl+a` e `ctrl+d`.
 
-    Referências adicionais [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 **por uma questão de 'simplicidade'** 
+    Referências adicionais [aqui](https://blogs.sap.com/2019/12/11/running-sap-nw-7.52-sp4-trial-in-docker-in-windows-subsystem-for-linux-2/), [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 por uma questão de **'simplicidade'** 
 
 1. Instalar o [Git](https://git-scm.com)
 

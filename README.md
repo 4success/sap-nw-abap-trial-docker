@@ -115,7 +115,7 @@ Esse Dockerfile foi baseado:
     - Use esse para usar o mapeamento de portas com as mesmas numerações no localhost (recomendado)
 
         ```sh
-        docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -h vhcalnplci --name nwabap752 -it nwabap:7.52 /bin/bash
+        docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -p 3300:3300 -h vhcalnplci --name nwabap752 -it nwabap:7.52 /bin/bash
         ```
 
     - Use esse para gerar portas "aleaórias" no localhost, se quiser assim
@@ -127,7 +127,7 @@ Esse Dockerfile foi baseado:
     **Dica:** Você também pode usar `--rm` para o container ser excluído logo após você sair do terminal ou ele for parado 
 
       ```sh
-      docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -h vhcalnplci --rm --name nwabap752 -it nwabap:7.52 /bin/bash
+      docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -p 3300:3300 -h vhcalnplci --rm --name nwabap752 -it nwabap:7.52 /bin/bash
       ```
 
 1. Para começar a instalação do SAP NW ABAP 7.52 Trial:

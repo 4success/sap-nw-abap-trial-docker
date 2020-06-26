@@ -41,19 +41,19 @@ Esse Dockerfile foi baseado:
         ```
     - Windows, com o Docker Desktop rodando em Hyper-V
    
-           ```sh
-           # Pega um a container com acesso privilegiado para o Docker daemon
-           docker run --privileged -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker alpine sh
-           exit
-           
-           # Rode um container com acesso total ap MobyLinuxVM
-           docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm -v /:/host alpine /bin/sh
-           
-           # Trocando para o FS do host
-           chroot /host
-           
-           # Ajustando o parâmetro
-           sysctl -w vm.max_map_count=1000000
+       ```sh
+       # Inicia um container com acesso privilegiado para o Docker daemon
+       docker run --privileged -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker alpine sh
+       exit
+       
+       # Rode um container com acesso total ap MobyLinuxVM
+       docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm -v /:/host alpine /bin/sh
+       
+       # Trocando para o FS do host
+       chroot /host
+       
+       # Ajustando o parâmetro
+       sysctl -w vm.max_map_count=1000000
     
     - Windows, com o Docker Desktop baseado em WSL
 

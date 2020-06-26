@@ -124,27 +124,18 @@ Esse Dockerfile foi baseado:
         docker run -P -h vhcalnplci --name nwabap752 -it nwabap:7.52 /bin/bash
         ```
 
-    **Dica:** Você também pode usar `--rm` para o container ser excluído logo após você sair do terminal ou ele for parado.
+    **Dica:** Você também pode usar `--rm` para o container ser excluído logo após você sair do terminal ou ele for parado 
 
       ```sh
       docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -h vhcalnplci --rm --name nwabap752 -it nwabap:7.52 /bin/bash
       ```
 
-1. Agora iremos começar a instalação do SAP NW ABAP 7.52 Trial
+1. Para começar a instalação do SAP NW ABAP 7.52 Trial:
 
-    - Instalação automática através de um script Expect (recomendado)
-
-        ```sh
-        /usr/sbin/uuidd
-        ./install.exp
-        ```
-
-    - Ou do jeito tradicional
-
-        ```sh
-        /usr/sbin/uuidd
-        ./install.sh
-        ```
+    ```sh
+    /usr/sbin/uuidd
+    ./install.sh
+    ```
 
     Sua instalação foi finalizada com sucesso se você visualizar a seguinte mensagem: **Installation of NPL successful**
 

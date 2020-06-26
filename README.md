@@ -71,7 +71,9 @@ Esse Dockerfile foi baseado:
 
     Depois de executado, você pode verificar se deu certo com o comando `sysctl vm.max_map_count`. Para sair, aperte `crtl+a` e `ctrl+d`.
 
-    Referências adicionais [aqui](https://blogs.sap.com/2019/12/11/running-sap-nw-7.52-sp4-trial-in-docker-in-windows-subsystem-for-linux-2/), [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 por uma questão de **'simplicidade'** 
+    Referências adicionais [aqui](https://blogs.sap.com/2019/12/11/running-sap-nw-7.52-sp4-trial-in-docker-in-windows-subsystem-for-linux-2/), [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 por uma questão de **'simplicidade'**
+    
+    Se mesmo assim ainda estiver encontrando algun erro, adicione o parâmetro `--privileged` no seu comando `docker run`  
 
 1. Instalar o [Git](https://git-scm.com)
 
@@ -129,6 +131,7 @@ Esse Dockerfile foi baseado:
       ```sh
       docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -p 3300:3300 -h vhcalnplci --rm --name nwabap752 -it nwabap:7.52 /bin/bash
       ```
+     
 
 1. Para começar a instalação do SAP NW ABAP 7.52 Trial:
 

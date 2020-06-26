@@ -19,13 +19,13 @@ Esse Dockerfile foi baseado:
 
 1. Aumente o parâmetro `Disc Image Size` nas suas preferências do Docker no menu "Resources > Advanced"
     - Adicione pelo menos 100 GB ao valor já cadastrado
-    - Aumente o parâmetro `Memory` para no mínimo `6 GiB`)
+    - Aumente o parâmetro `Memory` para no mínimo `6 GiB`
 
-    **IMPORTANTE:** se você pular esse passo, poderá ter erros durante o processo de instalação!
+    **IMPORTANTE:** se você pular esse passo, poderá ter erros durante o processo de instalação.
 
-1. Set **vm.max_map_count** to avoid intsallation error
+1. Mudar o valor do parâmetro **vm.max_map_count** para evitar erros de instalação
 
-    Para o **NW ABAP 7.52** a instalação tentará modificar o parâmetro **vm.max_map_count** se verificar que o valor está abaixo do esperado. Porém, se isso acontecer ocorrerá um erro **sysctl: setting key "vm.max_map_count": Read-only file system**. Sendo assim, é importante mudar o valor do parâmetro **vm.max_map_count** antes de começar a instalação para um valor maior ou igual ao necessário, para a instalação não ficar tentando indefinidamente modificar esse valor sem sucesso. Nos testes realizados o valor 1000000 funcionou sem problemas. Procedimento para modificar esse parâmetro:
+    Para o **NW ABAP 7.52** a instalação tentará modificar o parâmetro **vm.max_map_count** se verificar que o valor está abaixo do esperado. Porém, se isso acontecer ocorrerá um erro **sysctl: setting key "vm.max_map_count": Read-only file system**. Sendo assim, é importante mudar o valor do parâmetro **vm.max_map_count** antes de começar a instalação para um valor maior ou igual ao necessário, para a instalação não ficar tentando indefinidamente modificar esse valor sem sucesso. Nos testes realizados o valor 1000000 funcionou sem problemas. Abaixo o procedimento para modificar esse parâmetro:
 
     - Linux:
 
@@ -56,13 +56,13 @@ Esse Dockerfile foi baseado:
 
     Depois de executado, você pode verificar se deu certo com o comando `sysctl vm.max_map_count`. Para sair, aperte `crtl+a` e `ctrl+d`.
 
-    Referências adicionais [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 **fpor uma questão de simplicidade** 
+    Referências adicionais [aqui](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#docker-cli-run-prod-mode), [aqui](https://deployeveryday.com/2016/09/23/quick-tip-docker-xhyve.html), e na [SAP Note 900929](https://launchpad.support.sap.com/#/notes/900929) que recomenda a utilização do valor máximo de  2147483647 **por uma questão de 'simplicidade'** 
 
 1. Instalar o [Git](https://git-scm.com)
 
     No Windows, eu sugiro também instalar o Git Bash (será uma opção durante o processo de instalação).
 
-    **Dica:** Instalar o git não é realmente necessário. Você pode apenas baixar esse repositório na sua máquina via página do GitHub.
+    **Obs:** Não é necessário instalar o Git. Você pode apenas baixar esse repositório na sua máquina via página do GitHub.
 
 1. Clone esse repositório
 
@@ -77,7 +77,7 @@ Esse Dockerfile foi baseado:
     - Extraia o conteúdo dos arquivos rar baixados (extraia apenas o primeiro arquivo rar que ele fará o processo automaticamente). É necessário que o WinRAR esteja instalado ou outro software compatível
         - `unrar x TD752SP01.part01.rar ./sapdownloads`
 
-    **Dica:** SAP quer saber que baixa o NW ABAP Trial. Sendo assim, você precisa se cadastrar e logar antes de fazer os downloads. A criação da conta é grátis, assim como o download. A conta pode ser a mesma utilizada no SAP Communitiy / SCN.
+    **Dica:** A SAP quer saber que faz o download do NW ABAP Trial. Sendo assim, você precisa se cadastrar e logar antes de fazer os downloads. A criação da conta é grátis, assim como o download. A conta pode ser a mesma utilizada no SAP Communitiy / SCN.
 
 1. Faça o build da imagem
 
@@ -93,7 +93,7 @@ Esse Dockerfile foi baseado:
         docker build --build-arg http_proxy=http://proxy.dominio.corp:1234 --build-arg https_proxy=http://proxy.dominio.corp:1234 -t nwabap:7.52 .
         ```
 
-        **Dica:** Se sua rede tiver algum tipo de proxy, seu comando `docker build` irá falhar se não colocar conforme exemplo assim ou se os dados estiverem errados. Também leve em consideração que você pode precisar intervir em alguma configuração de rede dentro do container. O recomendado é usar essa imagem fora de uma rede com proxy.
+        **Dica:** Se sua rede tiver algum tipo de proxy, o comando `docker build` irá falhar caso não seja informado os dados corretos de proxy conforme exemplo acima. Também leve em consideração que você pode precisar alterar alguma configuração de rede dentro do container. O recomendado é usar essa imagem fora de uma rede com proxy.
 
 1. Crie / inicie com um dos comandos abaixo:
 

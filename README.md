@@ -126,13 +126,16 @@ Esse Dockerfile foi baseado:
         docker run -P -h vhcalnplci --name nwabap752 -it nwabap:7.52 /bin/bash
         ```
 
-    **Dica:** Você também pode usar `--rm` para o container ser excluído logo após você sair do terminal ou ele for parado 
+    **Dica 1:** Se você enfrentar algum erro relacionado a item 3 (vm.max_map_count), execute o comando com `--privileged`      
+    ```sh
+    docker run --privileged -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -h vhcalnplci --name nwabap752 -it nwabap:7.52 /bin/bash
+    ```
+
+    **Dica 2:** Você também pode usar `--rm` para o container ser excluído logo após você sair do terminal ou ele for parado 
 
       ```sh
       docker run -p 8000:8000 -p 44300:44300 -p 3300:3300 -p 3200:3200 -p 50000:50000 -p 50001:50001 -p 8101:8101 -h vhcalnplci --rm --name nwabap752 -it nwabap:7.52 /bin/bash
       ```
-     
-
 1. Para começar a instalação do SAP NW ABAP 7.52 Trial:
 
     ```sh

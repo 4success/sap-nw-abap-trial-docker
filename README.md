@@ -7,6 +7,7 @@ SAP NW ABAP 7.52 SP04 rodando no Docker para fins de treinamento. Isso irá faci
 
 Para instrução adicionais sobre a instalação do NW ABAP 7.52 SP04, confira o [anúncio ofical da SAP feito por Julie Plummer](https://blogs.sap.com/2019/07/01/as-abap-752-sp04-developer-edition-to-download/).
 
+Confira o passo-a-passo em vídeo que gravamos em nosso [canal do Youtube](https://youtu.be/3zPbJcHZns4).
 ## Inspirações
 
 Esse Dockerfile foi baseado:
